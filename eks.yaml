@@ -4,8 +4,13 @@ kind: ClusterConfig
 metadata:
   name: Murali-k8s-cluster
   region: us-east-1
+
 managedNodeGroups:
   - name: managed-ng-1
-    instanceType: ["t3.medium", "t3.large", "t3.xlarge", "t3.2xlarge"]
+    instanceTypes:
+      - t3.medium
+      - t3.large
+      - t3.xlarge
+      - t3.2xlarge
     desiredCapacity: 3
     spot: true
