@@ -6,6 +6,8 @@ spec:
   containers:
     - name: envar-container
       image: ubuntu:latest
+      command: ["sleep", "3600"]
+      # Keep the container running, otherwise it will exit immediately (CrashLoopBackOff)
       env:
         - name: DEMO_GREETING
           value: "Hello from the environment"
