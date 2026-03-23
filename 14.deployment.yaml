@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 3
+  selector:
+    Project: Expense
+    divison: Finance
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  labels:
+    Project: Expense
+    divison: Finance
+spec:
+  containers:
+    - name: nginx
+      image: nginx:stable
