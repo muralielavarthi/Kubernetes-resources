@@ -1,0 +1,9 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: fast-storage
+provisioner: ebs.csi.aws.com # The driver that creates the volume
+parameters:
+  type: gp3 # AWS General Purpose SSD
+  fsType: ext4 # Filesystem to be created
+reclaimPolicy: Delete # Automatically delete the volume when PVC is deleted

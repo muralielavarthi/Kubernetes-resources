@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: pod-with-pvc-static
+  name: my-pod-static
   labels:
     Project: Expense
     division: Finance
