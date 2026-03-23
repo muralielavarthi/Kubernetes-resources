@@ -8,16 +8,12 @@ spec:
     matchLabels:
       Project: Expense
       division: Finance
-
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: pod-demo
-  labels:
-    Project: Expense
-    division: Finance
-spec:
-  containers:
-    - name: nginx
-      image: nginx:1.14.2
+  template: # This is the Pod template, will create 3 Pods with these specifications
+    metadata:
+      labels:
+        Project: Expense
+        division: Finance
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.14.2
