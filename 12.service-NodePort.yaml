@@ -12,7 +12,7 @@ spec:
       port: 80 # Service port
       targetPort: 80 # Port on the Pod where the application is running
       nodePort: 30007 # Port on each node to expose the service
-      # if not set, Kubernetes will automatically assign a port from the default range (30000-32767)
+      # if not set, Kubernetes will automatically assign a port from the default range.
 
 ---
 apiVersion: v1
