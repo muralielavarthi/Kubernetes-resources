@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: my-pv-static
+spec:
+  capacity:
+    storage: 10Gi # Must be <= actual EBS volume size
+  accessModes:
+    - ReadWriteOnce # EBS supports only RWO
+  persistentVolumeReclaimPolicy: Retain
+  awsElasticBlockStore:
+    volumeID: vol-063fdd4828cf54e33 # EBS volume ID
