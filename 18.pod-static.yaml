@@ -2,6 +2,9 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: pod-with-pvc-static
+  labels:
+    Project: Expense
+    division: Finance
 spec:
   containers:
     - name: app
@@ -9,9 +12,6 @@ spec:
       volumeMounts:
         - mountPath: /usr/share/nginx/html
           name: my-storage # must match the volume name defined below to link (container & volume)
-  labels:
-    Project: Expense
-    division: Finance
   volumes:
     - name: my-storage
       persistentVolumeClaim:
