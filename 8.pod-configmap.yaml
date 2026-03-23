@@ -9,4 +9,4 @@ spec:
       command: ["sleep", "3600"]
       envFrom: # attach the ConfigMap to the Pod's environment variables
         - configMapRef:
-            name: demo2
+            name: demo2 #configmap name
