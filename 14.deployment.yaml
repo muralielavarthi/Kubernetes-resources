@@ -5,7 +5,7 @@ metadata:
 spec:
   replicas: 3
   selector:
-    matchLabels:
+    matchLabels: # this mandatory field is used to identify which Pods belong to this Deployment
       Project: Expense
       division: Finance
   template: # This is the Pod template, will create Pods with these specifications
