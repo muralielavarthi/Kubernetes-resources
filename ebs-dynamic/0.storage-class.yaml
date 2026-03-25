@@ -6,7 +6,7 @@ provisioner: ebs.csi.aws.com # The driver that creates the volume
 parameters:
   type: gp3 # AWS General Purpose SSD
   fsType: ext4 # Filesystem to be created
-reclaimPolicy: Delete # Automatically delete the volume when PVC is deleted
+reclaimPolicy: Delete # Automatically delete the volume and pv when PVC is deleted
 allowedTopologies: # Restrict provisioning to specific zones
   - matchLabelExpressions:
       - key: topology.kubernetes.io/zone
