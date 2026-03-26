@@ -1,6 +1,6 @@
-## Continuously learning new Kubernetes resources and practicing regularly to gain a deeper understanding of the concepts.
+### Continuously learning new Kubernetes resources and practicing regularly to gain a deeper understanding of the concepts.
 
-### Kubernetes Resources Explored So Far
+#### Kubernetes Resources Explored So Far
 
 - Namespaces
 - Pods
