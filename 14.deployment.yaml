@@ -6,13 +6,13 @@ spec:
   replicas: 3
   selector:
     matchLabels: # this mandatory field is used to identify which Pods belong to this Deployment
-      Project: Expense
-      division: Finance
+      project: expense
+      division: finance
   template: # This is the Pod template, will create Pods with these specifications
     metadata:
       labels:
-        Project: Expense
-        division: Finance
+        project: expense
+        division: finance
     spec:
       containers:
         - name: nginx

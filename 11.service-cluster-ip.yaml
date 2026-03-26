@@ -4,8 +4,8 @@ metadata:
   name: murali-cluster-ip-service
 spec:
   selector: # selects the Pods that will be targeted by this Service.
-    Project: Expense
-    divison: Finance
+    project: expense
+    division: finance
   ports:
     - protocol: TCP
       port: 80 # Service port
@@ -17,8 +17,8 @@ kind: Pod
 metadata:
   name: nginx1
   labels: # labels are used to identify and group Pods. The Service uses these labels to select the Pods it will route traffic to.
-    Project: Expense
-    divison: Finance
+    project: expense
+    division: finance
 spec:
   containers:
     - name: nginx
@@ -30,8 +30,8 @@ kind: Pod
 metadata:
   name: nginx2
   labels:
-    Project: Expense
-    divison: Finance
+    project: expense
+    division: finance
 spec:
   containers:
     - name: nginx
