@@ -1,43 +1,20 @@
-# Headless service, normal service, StatefulSet
+#Headless service
 apiVersion: v1
 kind: Service
 metadata:
   name: mysql-headless
   namespace: expense
-  labels:
-    app: mysql
-    project: expense
-    tier: db
 spec:
-  clusterIP: None
+  clusterIP: None # this makes it headless service
   selector:
     app: mysql
     project: expense
-    tier: db
   ports:
     - protocol: TCP
       port: 3306 # service port
       targetPort: 3306
 ---
-apiVersion: v1
-kind: Service
-metadata:
-  name: mysql
-  namespace: expense
-  labels:
-    app: mysql
-    project: expense
-    tier: db
-spec:
-  selector:
-    app: mysql
-    project: expense
-    tier: db
-  ports:
-    - protocol: TCP
-      port: 3306 # service port
-      targetPort: 3306
----
+# StatefulSet
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -48,21 +25,19 @@ spec:
     matchLabels:
       app: mysql
       project: expense
-      tier: db # has to match .spec.template.metadata.labels
-  serviceName: "mysql-headless"
-  replicas: 2 # by default is 1
-  minReadySeconds: 10 # by default is 0
+  serviceName: "mysql-headless" #Headless service name
+  replicas: 2
+  minReadySeconds: 10 # time to wait before marking a pod as ready, default is 0 seconds
   template:
     metadata:
       labels:
         app: mysql
         project: expense
-        tier: db # has to match .spec.selector.matchLabels
     spec:
-      terminationGracePeriodSeconds: 10
+      terminationGracePeriodSeconds: 10 # time to wait before forcefully terminating a pod, default is 30 seconds
       containers:
         - name: mysql
-          image: joindevops/mysql:1.0.0
+          image: mysql:5.7
           volumeMounts:
             - name: mysql
               mountPath: /var/lib/mysql
@@ -73,7 +48,7 @@ spec:
         namespace: expense
       spec:
         accessModes: ["ReadWriteOnce"]
-        storageClassName: "ebs-sc"
+        storageClassName: "fast-storage"
         resources:
           requests:
             storage: 1Gi
