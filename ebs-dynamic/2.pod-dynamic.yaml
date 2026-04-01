@@ -9,12 +9,12 @@ spec:
   containers:
     - name: app
       image: nginx
-      volumeMounts:
-        - mountPath: /usr/share/nginx/html
-          name: my-storage
-  volumes:
-    - name: my-storage
-      persistentVolumeClaim:
-        claimName: my-pvc-dynamic
-  nodeSelector:
-    topology.kubernetes.io/zone: us-east-1a
+  #     volumeMounts:
+  #       - mountPath: /usr/share/nginx/html
+  #         name: my-storage
+  # volumes:
+  #   - name: my-storage
+  #     persistentVolumeClaim:
+  #       claimName: my-pvc-dynamic
+  # nodeSelector:
+  #   topology.kubernetes.io/zone: us-east-1a
