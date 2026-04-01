@@ -2,6 +2,9 @@ apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: fast-storage
+  labels:
+    Project: Expense
+    division: Finance
 provisioner: ebs.csi.aws.com # The driver that creates the volume
 parameters:
   type: gp3 # AWS General Purpose SSD
