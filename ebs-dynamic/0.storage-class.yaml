@@ -11,4 +11,4 @@ allowedTopologies: # Restrict provisioning to specific zones
   - matchLabelExpressions:
       - key: topology.kubernetes.io/zone
         values:
-          - us-east-1f
+          - us-east-1a
