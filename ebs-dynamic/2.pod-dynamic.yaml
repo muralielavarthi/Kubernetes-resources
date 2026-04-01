@@ -17,4 +17,4 @@ spec:
       persistentVolumeClaim:
         claimName: my-pvc-dynamic
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1c
+    topology.kubernetes.io/zone: us-east-1a
