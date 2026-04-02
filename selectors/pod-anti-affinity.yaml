@@ -29,7 +29,7 @@ spec:
                 operator: NotIn
                 values:
                   - webserver-store
-          topologyKey: "kubernetes.io/zone"
+          topologyKey: "kubernetes.io/node"
 #"kubernetes.io/hostname" → same node pod will be scheduled
 #"topology.kubernetes.io/zone" → same availability zone
 #"topology.kubernetes.io/region" → same region
