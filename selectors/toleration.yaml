@@ -9,7 +9,7 @@ spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-east-1f
   tolerations:
-    -key: “hardware”
-    operator: “equal”
-    value: “gpu”
-    effect: “NoSchedule”
+    - key: “hardware”
+      operator: “equal”
+      value: “gpu”
+      effect: “NoSchedule”
