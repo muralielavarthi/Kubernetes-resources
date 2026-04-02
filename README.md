@@ -12,3 +12,4 @@
 - Deployment
 - ReplicaSet
 - EBS static & dynamic provisioning (PersistentVolume, PersistentVolumeClaim, StorageClass)
+- Selectors (taint, toleration, NodeAffinity, podAffinity, podAntiAffinity)
