@@ -7,4 +7,4 @@ spec:
     - name: nginx
       image: nginx:1.14.2
   nodeSelector:
-    topology.kubernetes.io/zone: us-east-1a
+    topology.kubernetes.io/zone: us-east-1d
