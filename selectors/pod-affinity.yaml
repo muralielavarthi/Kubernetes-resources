@@ -24,12 +24,12 @@ spec:
     podAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
-            matchExpressions:
-              - key: app
-                operator: In
-                values:
-                  - webserver-store
-            topologyKey: "kubernetes.io/hostname"
+          matchExpressions:
+            - key: app
+              operator: In
+              values:
+                - webserver-store
+          topologyKey: "kubernetes.io/hostname"
 #"kubernetes.io/hostname" → same node pod will be scheduled
 #"topology.kubernetes.io/zone" → same availability zone
 #"topology.kubernetes.io/region" → same region
