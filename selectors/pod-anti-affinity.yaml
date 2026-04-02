@@ -21,12 +21,12 @@ spec:
     - name: webserver1
       image: nginx:1.14.2
   affinity:
-    podAffinity:
+    podAntiAffinity:
       requiredDuringSchedulingIgnoredDuringExecution:
         - labelSelector:
             matchExpressions:
               - key: app
-                operator: NotIn
+                operator: In
                 values:
                   - webserver-store
           topologyKey: "kubernetes.io/node"
