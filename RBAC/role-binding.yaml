@@ -5,9 +5,9 @@ metadata:
   namespace: dev
 subjects:
   - kind: Group
-    name: Developer-Group-k8 # 👈 must match Access Entry
+    name: Developer-Group-k8 # 👈 must match EKS Access Entry
     apiGroup: rbac.authorization.k8s.io
 roleRef:
   kind: Role
-  name: Dev-Role-K8 # 👈 must match Role name
+  name: Dev-Role-K8 # 👈 must match Role name in role.yaml
   apiGroup: rbac.authorization.k8s.io
