@@ -4,6 +4,6 @@ metadata:
   name: Dev-Role-K8
   namespace: dev
 rules:
-  - apiGroups: [""] # "" indicates the core API group, used for resources like pods, services, etc.
+  - apiGroups: ["*"] # "" indicates the core API group, used for resources like pods, services, etc.
     resources: ["pods"] # specify the resources that this role can access
     verbs: ["get", "list", "watch", "create", "delete"] # specify the actions that can be performed on the resources
